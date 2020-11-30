@@ -7,6 +7,8 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(macros.cmake)
+
 set(ICON_NAME appicon.icns)
 
 set_source_files_properties(${ICON_NAME} PROPERTIES 
@@ -15,6 +17,9 @@ MACOSX_PACKAGE_LOCATION Resources
 
 set(SOURCES main.cpp Info.plist.in license.txt ${ICON_NAME} app.plist)
 add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})
+
+ADD_OSX_FRAMEWORK(${PROJECT_NAME} Foundation )
+ADD_OSX_FRAMEWORK(${PROJECT_NAME} CoreGraphics )
 
 # app.plist
 
