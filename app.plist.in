@@ -3,18 +3,18 @@
 <plist version="1.0">
     <dict>
         <key>Label</key>
-        <string>com.test.app.captureservice</string>
+        <string>com.test.app.${PROJECT_NAME}</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/Users/mac/code/safekids/service/build/usr/bin/captureservice.app/Contents/MacOS/captureservice</string>
+            <string>/usr/local/bin/${PROJECT_NAME}.app/Contents/MacOS/${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
         <key>KeepAlive</key>
         <false/>
         <key>StandardOutPath</key>
-        <string>/tmp/captureservice.stdout.txt</string>
+        <string>/dev/null</string>
         <key>StandardErrorPath</key>
-        <string>/tmp/captureservice.stderr.txt</string>
+        <string>/dev/null</string>
     </dict>
 </plist>

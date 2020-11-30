@@ -13,7 +13,12 @@ set_source_files_properties(${ICON_NAME} PROPERTIES
 MACOSX_PACKAGE_LOCATION Resources
 )
 
-set(SOURCES main.cpp Info.plist.in license.txt ${ICON_NAME})
+configure_file(app.plist.in app.plist)
+set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/app.plist PROPERTIES 
+MACOSX_PACKAGE_LOCATION Resources
+)
+
+set(SOURCES main.cpp Info.plist.in license.txt ${ICON_NAME} app.plist)
 add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})
 
 file(COPY ${ICON_NAME} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
@@ -36,13 +41,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC "${Boost_INCLUDE_DIRS}")
 target_link_libraries(${PROJECT_NAME} Boost::system Boost::date_time)
 add_dependencies(${PROJECT_NAME} Boost::system Boost::date_time)
 
-# set_source_files_properties(Boost::system PROPERTIES 
-# MACOSX_PACKAGE_LOCATION Frameworks
-# )
 
 install(TARGETS ${PROJECT_NAME} 
   RUNTIME DESTINATION bin
   BUNDLE DESTINATION bin
   RESOURCE DESTINATION bin
-#   FRAMEWORK DESTINATION bin
 )
