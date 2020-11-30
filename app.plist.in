@@ -6,7 +6,7 @@
         <string>com.test.app.${PROJECT_NAME}</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/usr/local/bin/${PROJECT_NAME}.app/Contents/MacOS/${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
+            <string>/usr/local/bin/${PROJECT_NAME}.app/Contents/MacOS/${PROJECT_NAME}</string>
         </array>
         <key>RunAtLoad</key>
         <true/>

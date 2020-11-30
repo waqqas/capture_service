@@ -13,13 +13,18 @@ set_source_files_properties(${ICON_NAME} PROPERTIES
 MACOSX_PACKAGE_LOCATION Resources
 )
 
+set(SOURCES main.cpp Info.plist.in license.txt ${ICON_NAME} app.plist)
+add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})
+
+# app.plist
+
 configure_file(app.plist.in app.plist)
 set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/app.plist PROPERTIES 
 MACOSX_PACKAGE_LOCATION Resources
 )
 
-set(SOURCES main.cpp Info.plist.in license.txt ${ICON_NAME} app.plist)
-add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})
+
+# app icon
 
 file(COPY ${ICON_NAME} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
