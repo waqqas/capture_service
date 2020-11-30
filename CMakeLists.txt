@@ -20,6 +20,7 @@ add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})
 
 ADD_OSX_FRAMEWORK(${PROJECT_NAME} Foundation )
 ADD_OSX_FRAMEWORK(${PROJECT_NAME} CoreGraphics )
+ADD_OSX_FRAMEWORK(${PROJECT_NAME} ImageIO )
 
 # app.plist
 
@@ -48,7 +49,7 @@ set(Boost_USE_STATIC_LIBS ON)
 
 find_package(Boost REQUIRED COMPONENTS system date_time)
 target_include_directories(${PROJECT_NAME} PUBLIC "${Boost_INCLUDE_DIRS}")
-target_link_libraries(${PROJECT_NAME} Boost::system Boost::date_time)
+target_link_libraries(${PROJECT_NAME} PUBLIC Boost::system Boost::date_time)
 add_dependencies(${PROJECT_NAME} Boost::system Boost::date_time)
 
 
