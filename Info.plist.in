@@ -16,5 +16,7 @@
     <string>Screen Capture</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
+    <key>CFBundleIconFile</key>
+    <string>appicon.icns</string>
   </dict>
 </plist>
