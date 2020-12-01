@@ -6,7 +6,7 @@
         <string>com.test.app.${PROJECT_NAME}</string>
         <key>ProgramArguments</key>
         <array>
-            <string>@@A@TargetDir@A@@/Contents/MacOS/${PROJECT_NAME}</string>
+            <string>TargetDir/Contents/MacOS/${PROJECT_NAME}</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
