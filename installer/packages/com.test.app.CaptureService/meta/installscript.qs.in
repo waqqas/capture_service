@@ -1,0 +1,23 @@
+function Component()
+{
+    installer.setValue("TargetDir", "/Applications/CaptureService.app");
+}
+
+Component.prototype.createOperations = function()
+{
+   component.createOperations();
+
+   component.addOperation("Replace", "@@A@TargetDir@A@@/Contents/Resources/app.plist", "TargetDir",
+                          "@@A@TargetDir@A@@");
+
+   component.addElevatedOperation("Execute", "chown", "-R", "root", "@@A@TargetDir@A@@");
+
+   component.addElevatedOperation("Copy", "@@A@TargetDir@A@@/Contents/Resources/app.plist",
+                                  "/Library/LaunchAgents/com.test.app.CaptureService.plist");
+   component.addElevatedOperation("Execute", "chown", "root", "/Library/LaunchAgents/com.test.app.CaptureService.plist");
+
+   if (installer.isInstaller())
+   {
+      component.addOperation("Execute", "launchctl", "load", "/Library/LaunchAgents/com.test.app.CaptureService.plist");
+   }
+}

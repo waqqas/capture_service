@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Capture Service</DisplayName>
+    <Description>Capture Service</Description>
+    <Version>${PROJECT_VERSION}</Version>
+    <ReleaseDate>2020-10-01</ReleaseDate>
+    <Default>true</Default>
+    <RequiresAdminRights>true</RequiresAdminRights>
+    <Script>installscript.qs</Script>
+</Package>

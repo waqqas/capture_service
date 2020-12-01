@@ -52,9 +52,16 @@ target_include_directories(${PROJECT_NAME} PUBLIC "${Boost_INCLUDE_DIRS}")
 target_link_libraries(${PROJECT_NAME} PUBLIC Boost::system Boost::date_time)
 add_dependencies(${PROJECT_NAME} Boost::system Boost::date_time)
 
+set(INSTALLER_DIR ${CMAKE_CURRENT_BINARY_DIR}/installer)
 
 install(TARGETS ${PROJECT_NAME} 
   RUNTIME DESTINATION bin
   BUNDLE DESTINATION bin
   RESOURCE DESTINATION bin
 )
+
+add_custom_target(installer
+DEPENDS installer_installer
+)
+
+add_subdirectory("installer")

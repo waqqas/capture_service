@@ -1,0 +1,1 @@
+configure_file(config.xml.in config.xml)
