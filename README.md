@@ -1,6 +1,8 @@
 # capture_service
 Mac OS screen capture agent
 
+# dependencies
+- boost (1.74)
 
 # build
 - mkdir build
@@ -9,7 +11,6 @@ Mac OS screen capture agent
 - make
 
 # generate installer
-
 Make sure that Qt Installer framework is installed and binarycreator is available in path
 
 - make install

@@ -34,7 +34,7 @@ void doCGCapture()
     pt::ptime now = pt::second_clock::local_time();
 
     // iterate screens and take the screenshots
-    for (int i = 0; i < dispCount; i++)
+    for (uint32_t i = 0; i < dispCount; i++)
     {
         CGDirectDisplayID dispId = displays[i];
 
