@@ -52,7 +52,7 @@ void doCGCapture()
         // file/format to save pixels to
         CGImageDestinationRef destination =
             CGImageDestinationCreateWithURL(
-                path, CFSTR("public.png"), 1, NULL); //[4]
+                path, CFSTR("public.jpeg"), 1, NULL); //[4]
 
         // add our captured pixels
         CGImageDestinationAddImage(destination, img, nil);
