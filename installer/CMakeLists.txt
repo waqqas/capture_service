@@ -1,7 +1,7 @@
 add_subdirectory("config")
 add_subdirectory("packages")
 
-add_custom_target(installer_installer ALL
+add_custom_target(installer_installer
     DEPENDS  installer.app
 )
 
